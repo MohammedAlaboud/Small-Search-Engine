@@ -22,4 +22,5 @@
         return $http.post('/website/create', site);
       }
 
+    }
 })();
