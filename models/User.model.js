@@ -31,6 +31,7 @@ UserSchema.methods = {
 
 module.exports = mongoose.model('User', UserSchema);
 
+//for creating users (done here instead of controller to use bcrypt: https://www.npmjs.com/package/bcrypt-nodejs)
 module.exports.createUser = function(newUser, cb) {
   bcrypt.hash(newUser.password, bcrypt.genSaltSync(SALT_WORK_FACTOR), null, function(err, hash) {
     if(err) throw err;
