@@ -7,7 +7,7 @@ exports.create = function(req, res) {
   newWebsite.title = req.body.title;
   newWebsite.url = req.body.url;
   newWebsite.description = req.body.description;
-  newWebsite.submittedBy.id = req.body.id;
+  newWebsite.submittedBy.id = req.body.id; //tag user to search 
 
   newWebsite.save(function(err, result) { //save the inputted data
     if(err) {
